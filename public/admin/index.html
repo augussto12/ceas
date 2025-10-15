@@ -9,11 +9,25 @@
     <!-- Cargar Decap CMS desde archivo local -->
     <script src="./js/decap-cms.js"></script>
 
+    <!-- Widget de Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <script>
       if (typeof window.CMS === 'undefined') {
         console.error("Decap CMS no se cargó correctamente.");
       } else {
         window.CMS.init();
+      }
+
+      // Permite login con GitHub directamente
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
       }
     </script>
   </body>

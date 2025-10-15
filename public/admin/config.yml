@@ -1,9 +1,7 @@
 backend:
   name: git-gateway
-  repo: augussto12/ceas
   branch: test
-  base_url: https://ceas-test.netlify.app
-  auth_endpoint: /api/auth
+  repo: augussto12/ceas
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
