@@ -1,12 +1,23 @@
 <!doctype html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administrador CEAS</title>
   </head>
   <body>
-    <!-- Cargar Decap CMS directamente desde un CDN confiable -->
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.13/dist/decap-cms.js"></script>
+    <!-- Cargar Decap CMS desde CDN confiable -->
+    <script src="https://unpkg.com/decap-cms@3.0.13/dist/decap-cms.js"></script>
+
+    <!-- Indicarle al CMS dónde está la configuración -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      CMS.init({
+        config: {
+          load_config_file: true,
+          config_file: "config.yml",
+        },
+      });
+    </script>
   </body>
 </html>
