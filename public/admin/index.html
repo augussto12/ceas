@@ -8,12 +8,7 @@
 </head>
 
 <body>
-    <!-- Cargar Decap CMS desde archivo local -->
-    <!-- <script src="./js/decap-cms.js"></script> -->
     <script src="https://unpkg.com/decap-cms@3.8.4/dist/decap-cms.js"></script>
-
-
-    <!-- Widget de Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
@@ -23,7 +18,6 @@
             window.CMS.init();
         }
 
-        // Permite login con GitHub directamente
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -33,6 +27,24 @@
                 }
             });
         }
+    </script>
+
+    <!-- Silenciar errores visuales -->
+    <script>
+        window.addEventListener('error', function (event) {
+            if (event.filename && event.filename.includes('decap-cms')) {
+                event.stopImmediatePropagation();
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        window.addEventListener('unhandledrejection', function (event) {
+            if (event.reason && event.reason.stack && event.reason.stack.includes('decap-cms')) {
+                event.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 
