@@ -1,34 +1,39 @@
 <!doctype html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administrador CEAS</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Cargar Decap CMS desde archivo local -->
-    <script src="./js/decap-cms.js"></script>
+    <!-- <script src="./js/decap-cms.js"></script> -->
+    <script src="https://unpkg.com/decap-cms@3.8.4/dist/decap-cms.js"></script>
+
 
     <!-- Widget de Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
-      if (typeof window.CMS === 'undefined') {
-        console.error("Decap CMS no se cargó correctamente.");
-      } else {
-        window.CMS.init();
-      }
+        if (typeof window.CMS === 'undefined') {
+            console.error("Decap CMS no se cargó correctamente.");
+        } else {
+            window.CMS.init();
+        }
 
-      // Permite login con GitHub directamente
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+        // Permite login con GitHub directamente
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
             });
-          }
-        });
-      }
+        }
     </script>
-  </body>
+</body>
+
 </html>
