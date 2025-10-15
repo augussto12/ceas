@@ -6,18 +6,16 @@
     <title>Administrador CEAS</title>
   </head>
   <body>
-    <!-- Cargar Decap CMS desde CDN confiable -->
-    <script src="https://unpkg.com/decap-cms@3.0.13/dist/decap-cms.js"></script>
-
-    <!-- Indicarle al CMS dónde está la configuración -->
+    <!-- Usamos jsDelivr que sirve el MIME correcto -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.13/dist/decap-cms.min.js"></script>
+    
+    <!-- Inicializar CMS -->
     <script>
-      window.CMS_MANUAL_INIT = true;
-      CMS.init({
-        config: {
-          load_config_file: true,
-          config_file: "config.yml",
-        },
-      });
+      if (typeof window.CMS === 'undefined') {
+        console.error("Decap CMS no se cargó correctamente.");
+      } else {
+        window.CMS.init();
+      }
     </script>
   </body>
 </html>
