@@ -1,0 +1,58 @@
+.about-section {
+  background-color: #f4f7fa;
+  padding: 4rem 1rem;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-container {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2.2rem;
+  color: #004b6f;
+  margin-bottom: 1rem;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-card {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h2 {
+  color: #004b6f;
+  margin-bottom: 0.8rem;
+}
+
+.about-card p {
+  color: #444;
+  line-height: 1.5;
+}

@@ -1,0 +1,29 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background-color: #f4f7fa;
+  padding: 3rem 1rem;
+}
+
+.intro {
+  max-width: 800px;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.intro h2 {
+  color: #0e8db4;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
