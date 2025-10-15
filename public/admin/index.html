@@ -6,10 +6,9 @@
     <title>Administrador CEAS</title>
   </head>
   <body>
-    <!-- Usamos jsDelivr que sirve el MIME correcto -->
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.13/dist/decap-cms.min.js"></script>
-    
-    <!-- Inicializar CMS -->
+    <!-- Cargar Decap CMS desde archivo local -->
+    <script src="./js/decap-cms.js"></script>
+
     <script>
       if (typeof window.CMS === 'undefined') {
         console.error("Decap CMS no se cargó correctamente.");
